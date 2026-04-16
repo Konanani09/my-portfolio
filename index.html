@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root {
@@ -23,7 +24,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* RESET + BASE */
+/* Reset and base */
 * {
   margin: 0;
   padding: 0;
@@ -83,7 +84,7 @@ body::after {
   }
 }
 
-/* NAVBAR */
+/* Navigation bar*/
 nav {
   display: flex;
   justify-content: center;
@@ -104,7 +105,7 @@ nav a {
   transition: 0.3s, transform 0.2s ease;
 }
 
-/* NAV HOVER UNDERLINE */
+/* Navigation hovering effect */
 nav a::after {
   content: "";
   position: absolute;
@@ -125,14 +126,14 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* MAIN CONTAINER */
+/* Main container */
 .container {
   max-width: 1000px;
   margin: 40px auto;
   padding: 0 15px;
 }
 
-/* CARD SECTIONS */
+/* Card sections */
 .card-section {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(12px);
@@ -167,7 +168,7 @@ nav a:hover {
   opacity: 1;
 }
 
-/* When visible */
+/* Visibility */
 .card-section.show {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -179,11 +180,14 @@ nav a:hover {
   box-shadow: 0 25px 60px rgba(0,0,0,0.2);
 }
 
-/* HOVER EFFECT */
+/* Hovering effects */
 .card-section:hover {
   transform: translateY(-10px) scale(1.01);
   box-shadow: 0 20px 45px rgba(0,0,0,0.15);
 }
+/*it ends here the card section for the main cards*/
+
+
 
 /* Center text inside cards */
 .section-card h1,
@@ -193,7 +197,7 @@ nav a:hover {
   text-align: center;
 }
 
-/* SHOW ON SCROLL */
+/* Sscrolling */
 .card-section.show {
   opacity: 1;
   transform: translateY(0);
@@ -206,8 +210,11 @@ html {
 .card-section {
   scroll-snap-align: start;
 }
+/*it ends here*/
 
-/* HERO */
+
+
+/* Hero */
 .hero {
   text-align: center;
 }
@@ -260,7 +267,7 @@ html {
   transform: scale(1.05);
 }
 
-/* TYPING EFFECT TEXT */
+/* typing text effect */
 .hero p {
   color: #6E6259;
   font-size: 16px;
@@ -291,14 +298,20 @@ html {
 .hero-bio {
   margin-top: 20px;
 }
+/*it ends here the hero section*/
+
+
 
 /* HEADINGS */
 h2 {
   text-align: center;
   margin-bottom: 25px;
 }
+/*it ends here*/
 
-/* INNER CARDS (skills/projects) */
+
+
+/* Inner cards for skills and projects how it would be like */
 .card {
   background: #F9F7F5;
   padding: 15px;
@@ -311,19 +324,59 @@ h2 {
   color: white;
   transform: translateY(-5px);
 }
+/*it ends here inner cards for skills and project*/
+
+
 
 /* GRID LAYOUT */
 .grid {
-  display: grid;
+  display: flex;
+  gap: 30px;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .grid .card {
   flex: 1 1 200px;
 }
+
+.skills-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-card {
+  background: #F9F7F5;
+  padding: 20px;
+  border-radius: 14px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  transition: 0.3s;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.skill-card h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.skill-card ul {
+  padding-left: 18px;
+}
+
+.skill-card li {
+  margin-bottom: 6px;
+}
+/*it ends here the grid*/
+
+
 
 /* Contact list card*/
 .contact p {
@@ -342,6 +395,8 @@ h2 {
 
 /* PROJECT CARD */
 .project-card {
+  flex: 1 1 300px;
+  max-width: 450px;
   display: flex;
   flex-direction: column;
   background: #F9F7F5;
@@ -352,19 +407,49 @@ h2 {
   transform: translateY(0);
 }
 
-.project-card:hover {
-  transform: translateY(-10px) scale(1.01);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+.project-card:hover .project-image img {
+  transform: scale(1.05);
 }
 
-/* IMAGE */
+/* Image */
 .project-image img {
   width: 100%;
-  height: 180px;
+  height: 280px;
   object-fit: cover;
+  transition: 0.4s;
 }
 
-/* CONTENT */
+
+/*Skills cards icons*/
+.skill-card i {
+  color: #2EC4B6;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+.skill-card li {
+  list-style: none;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.skill-card h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+/*it ends here*/
+
+
+
+/* Animate icons on hover */
+.skill-card:hover i {
+  transform: scale(1.2);
+}
+
+/* Content */
 .project-content {
   padding: 20px;
 }
@@ -379,7 +464,7 @@ h2 {
 }
 
 .project-content li {
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .tools {
@@ -403,7 +488,7 @@ h2 {
   background: #2EC4B6;
 }
 
-/* RESPONSIVE */
+/* Responsive media */
 @media (max-width: 600px) {
   .hero-content {
     flex-direction: column;
@@ -490,27 +575,69 @@ h2 {
  
 </section>
 
+<!--Career and Academics Goals-->
+<section class="card-section" id="goals">
+  <h2>Academics Goals</h2>
+  <p>
+    My academic goals are to excel in my studies and gain a deep understanding of Computer Science concepts and technologies. 
+    I aim to further my studies and pursue an Honours degree in Computer Science, with a focus on networking and cybersecurity. 
+    I am also interested in participating in research projects and internships to gain practical experience in the field. 
+    I believe that hands-on experience is crucial for developing the skills and knowledge needed to succeed in the tech industry, 
+    and I am eager to take advantage of any opportunities that come my way. Additionally, I am interested in pursuing 
+    certifications in networking and other relevant areas to further enhance my knowledge and skills.
+  </p>
+  <h2>Career Goals</h2>
+  <p>
+    My career goals are to become a successful network architect and contribute to the development of innovative networking solutions. 
+    I am passionate about using technology to connect people and devices in new and innovative ways, and I believe that networking is a crucial 
+    part of that. I am particularly interested in the field of cybersecurity and how it can be used to protect networks and data from cyber threats. 
+    I aim to work for a leading technology company where I can apply my skills and knowledge to help develop cutting-edge networking solutions. 
+    Ultimately, I hope to make a positive impact on the world through my work in the tech industry and contribute to the advancement of technology.
+    
+</section>
+
 <!-- SKILLS -->
 <section class="card-section" id="skills">
-  <h2>Soft Skills</h2>
-  <div class="card">Problem Solving</div>
-  <div class="card">Communication</div>
-  <div class="card">Teamwork</div>
-  <div class="card">Adaptability</div>
+  <h2>Skills & Tools</h2>
 
-  <h2>Technical Skills</h2>
-  <div class="card">Programming Languages: Java, C++, SQL</div>
-  <div class="card">Web Development: HTML, CSS, JavaScript</div>
+    <div class="skills-container">
 
-  <h2>Tools</h2>
-  <div class="card">Git</div>
-  <div class="card">Visual Studio Code</div>
-  <div class="card">NetBeans</div>
-  <div class="card">NameSpace</div>
-  <div class="card">cPanel</div>
-  <div class="card">W3Schools</div>
+  <div class="skill-card">
+    <h3><i class="fas fa-brain"></i> Soft Skills</h3>
+    <ul>
+      <li><i class="fas fa-lightbulb"></i> Problem Solving</li>
+      <li><i class="fas fa-comments"></i> Communication</li>
+      <li><i class="fas fa-users"></i> Teamwork</li>
+      <li><i class="fas fa-sync-alt"></i> Adaptability</li>
+    </ul>
+  </div>
 
+  <div class="skill-card">
+    <h3><i class="fas fa-code"></i> Technical Skills</h3>
+    <ul>
+      <li><i class="fab fa-java"></i> Java</li>
+      <li><i class="fas fa-code"></i> C++</li>
+      <li><i class="fas fa-database"></i> SQL</li>
+      <li><i class="fab fa-html5"></i> HTML</li>
+      <li><i class="fab fa-css3-alt"></i> CSS</li>
+      <li><i class="fab fa-js"></i> JavaScript</li>
+    </ul>
+  </div>
 
+  <div class="skill-card">
+    <h3><i class="fas fa-tools"></i> Tools</h3>
+    <ul>
+      <li><i class="fab fa-git-alt"></i> Git</li>
+      <li><i class="fas fa-code"></i> VS Code</li>
+      <li><i class="fas fa-laptop-code"></i> NetBeans</li>
+      <li><i class="fas fa-server"></i> cPanel</li>
+      <li><i class="fas fa-globe"></i> Namecheap</li>
+    </ul>
+  </div>
+
+</div>
+
+  </div>
 </section>
 
 <!-- PROJECTS -->
@@ -528,11 +655,17 @@ h2 {
 
       <div class="project-content">
         <h3>Mulanga Tutoring Academy Website</h3>
+        <p>
+          I built this website as a voluntery project for a local tutoring academy called Mulanga Tutoring Academy. 
+          The website serves as an online presence for the academy, providing information about their services, 
+          courses, and contact details. It was a great opportunity for me to apply my web development skills 
+          and create a user-friendly platform for the academy to connect with potential students and parents.
+        </p>
 
         <ul>
-          <li>Built a full website using HTML, CSS, and JavaScript</li>
-          <li>Includes homepage, about, courses, and contact pages</li>
-          <li>Designed a clean, user-friendly interface</li>
+          <li>Built it using HTML, CSS, and JavaScript</li>
+          <li>Includes homepage, about, services, packages, and contact pages</li>
+          <li>It is responsive and works on all devices</li>
         </ul>
 
         <p class="tools">
@@ -551,6 +684,14 @@ h2 {
 
       <div class="project-content">
         <h3>Student Login System (In Progress)</h3>
+        <p>
+          I am currently working on a student login system as a personal project to enhance my programming skills. 
+          The system will allow students to create accounts, log in, and access personalized dashboards with their 
+          academic information and resources. This project is a great opportunity for me to apply my knowledge of 
+          programming languages and database management while creating a practical application that can be used by students.
+          This is will be great to create a full working online academy that will be similar to Coursera and Moodle, 
+          but it will be focused on providing courses and resources for learners that fall under Basic Education in South Africa.
+        </p>
 
         <ul>
           <li>Frontend built with HTML, CSS, JavaScript</li>
